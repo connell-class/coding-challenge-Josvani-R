@@ -50,9 +50,8 @@ public class ListController {
 	}
 	
 	@PostMapping("/update")
-	public GroceryList update(@RequestParam("id") int id) {
-		GroceryList gl = ls.findByid(id);
-		return ls.update(gl);
+	public GroceryList update(@RequestBody GroceryList list) {
+		return ls.update(list);
 	}
 	@GetMapping("/items")
 	public GroceryList getById(@RequestParam("id") int id) {
