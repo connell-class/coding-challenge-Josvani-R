@@ -8,20 +8,20 @@ import { List } from 'src/app/model/List';
   styleUrls: ['./home-container.component.css']
 })
 export class HomeContainerComponent implements OnInit {
-  isLoading: boolean= false;
+
 
 
   constructor(private listService:ListService) { }
 
   getList(){
-    this.isLoading=true;
-    let list:List={
-      "id":0,
-      "listname": ''
-    }
+    this.listService.getAll().then(resp=>{
+      console.log(resp);
+
+    })
   }
 
   ngOnInit(): void {
+    this.getList();
   }
 
 }
